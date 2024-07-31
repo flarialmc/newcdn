@@ -1,0 +1,66 @@
+{
+    "News": [
+             { 
+		    "Title": "Launcher v2",
+		    "Body" : "As promised, Flarial Launcher v2 has been FINALLY released for PUBLIC use! People can now experience the stunning new UI created by @happened again which now includes numerous fixes that were much needed in the past. If you are facing any issues with the launcher, please let us know through #bugs and we will fix all the issues as needed.
+
+How do you update? The launcher has an autoupdater for the ones who are currently using the latest launcher!
+Again, thank you for the endless support, and I love you all.",
+		     "Author":"Bari",
+		     "RoleName":"Owner",
+		     "RoleColor":"#da2e2e",
+		     "AuthorAvatar":"https://cdn.discordapp.com/avatars/546211976674803712/8234bc0b47715b505f857da0ee1005ab.png",
+		     "Date": "January 17th, 2024",
+		     "Background": "https://media.discordapp.net/attachments/1090201485066907679/1123212588130508850/2023-06-27_21.25.00.png?width=866&height=363"
+		},
+            { 
+		    "Title": "THE FINAL UPDATE, for now.",
+		    "Body" : "The launcher has been FULLY fixed. Everything works, the version changer, the client, no bugs, no crashes, even the installer actually adds to your search bar now!
+Even the autoupdater works.
+		    
+Everyone, I recommend you to go to https://flarial.net/ or download this file to make a clean install of Flarial, make sure you have Flarial closed for now.
+Block Outline module has been added as per requests. Hitboxes will be added later.
+		    
+
+Thank you for using Flarial ❤️ , Please reinstall the launcher, as the experience shall be bug free this time around.
+Please, if you are facing any bugs, create a forum and ping me at #⁠bugs",
+		     "Author":"TheBarii w/ @raspberryepicly",
+		     "RoleName":"Owner",
+		     "RoleColor":"#da2e2e",
+		     "AuthorAvatar":"https://cdn.discordapp.com/avatars/546211976674803712/8234bc0b47715b505f857da0ee1005ab.png",
+		     "Date": "December 18th, 2023",
+		     "Background": "https://media.discordapp.net/attachments/1090201485066907679/1123212588130508850/2023-06-27_21.25.00.png?width=866&height=363"
+		},
+		{
+            "Title": "DLL Update v1.5",
+            "Body": "The client has been updated with tons of changes/bug fixes, we also have updated the client to support more versions. To acess these versions make sure to redownload the Flarial installer and run it, if you haven't already.
+New modules include:
+•AutoGG
+•TextHotkey
+•TabList
+•Toggle Sneak
+•Nick Hider
+•Weather Changer
+•Search Bar
+
+Thank you all for the feedback, we will try to keep you all updated with new announcements in the near future!",
+            "Author": "SpinierYard212",
+            "RoleName": "Moderator",
+            "RoleColor": "#E91E63",
+            "AuthorAvatar": "https://cdn.discordapp.com/avatars/818456196943970365/828dd2434ca16613bb93120178f26814.png?size=1024",
+            "Date": "August 20th, 2023",
+            "Background": "https://media.discordapp.net/attachments/1090201485066907679/1123212588130508850/2023-06-27_21.25.00.png?width=866&height=363"
+        },
+	  	{
+	  		"Title": "Full Release!",
+			"Body": "The full release of Flarial is here! As Flarial continues to update you will see more news appear here.",
+			"Author": "happended again#0970",
+			"RoleName": "Developer",
+			"RoleColor": "#4287f5",
+			"AuthorAvatar": "https://cdn.discordapp.com/avatars/999022158489595975/ab0fb5f5713576ef79fdd717f43e664c.png?size=2048",
+			"Date": "July 14th, 2023",
+			"Background": "https://media.discordapp.net/attachments/1090201485066907679/1123212588130508850/2023-06-27_21.25.00.png?width=866&height=363"
+	  	}
+	
+	]
+}
