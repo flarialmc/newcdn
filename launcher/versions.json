@@ -29,7 +29,7 @@
 		{
 			"name": "1.20.62",
 			"ImgURL": "https://github.com/megahendick/Flarial.Laucher.Testing/blob/main/versionbg1.png?raw=true",
-			"verlink": "https://jiayi-api.vercel.app/api/v1/minecraft/download_url?version=1.20.62.4&arch=x64"
+			"verlink": "https://jiayi-api.vercel.app/api/v1/minecraft/download_url?version=1.20.62.1&arch=x64"
 		},
 		{
 			"name": "1.20.51",
