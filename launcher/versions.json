@@ -2,22 +2,22 @@
 	"versions":
 	[
 		{
-			"name": "1.21.21 (!!!BE CAREFUL)",
+			"name": "1.21.21",
 			"ImgURL": "https://github.com/megahendick/Flarial.Laucher.Testing/blob/main/versionbg1.png?raw=true",
 			"verlink": "https://jiayi-api.vercel.app/api/v1/minecraft/download_url?version=1.21.21.1&arch=x64"
 		},
 		{
-			"name": "1.21.2 (!!!MC VERSION SWITCHING ONLY)",
+			"name": "1.21.2",
 			"ImgURL": "https://github.com/megahendick/Flarial.Laucher.Testing/blob/main/versionbg1.png?raw=true",
 			"verlink": "https://jiayi-api.vercel.app/api/v1/minecraft/download_url?version=1.21.2.2&arch=x64"
 		},
 		{
-			"name": "1.21.1 (!!!IT REINSTALLS MINECRAFT)",
+			"name": "1.21.1",
 			"ImgURL": "https://github.com/megahendick/Flarial.Laucher.Testing/blob/main/versionbg1.png?raw=true",
 			"verlink": "https://jiayi-api.vercel.app/api/v1/minecraft/download_url?version=1.21.1.3&arch=x64"
 		},
 		{
-			"name": "1.21.0 (!!!IT DELETES MC)",
+			"name": "1.21.0",
 			"ImgURL": "https://github.com/megahendick/Flarial.Laucher.Testing/blob/main/versionbg1.png?raw=true",
 			"verlink": "https://jiayi-api.vercel.app/api/v1/minecraft/download_url?version=1.21.0.3&arch=x64"
 		},
