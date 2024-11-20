@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - 'dll/latest.dll'  # Specify the path to your latest.dll file
-
+  workflow_dispatch:
 jobs:
   check_hash:
     runs-on: ubuntu-latest
