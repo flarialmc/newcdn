@@ -35,8 +35,8 @@ jobs:
 
           
           echo '{
-            "latest": "'$latest_hash'",
-            "beta: "'$beta_hash'"
+            "Release": "'$latest_hash'",
+            "Beta": "'$beta_hash'"
           }' > dll_hashes.json
 
       - name: commit json
