@@ -1,45 +1,58 @@
-name: make hashbrowns 
+name: make hashbrowns
 
 on:
   push:
     paths:
-      - 'dll/latest.dll'  # Specify the path to your latest.dll file
+      - 'dll/latest.dll'  
+      - 'dll/beta.dll'    
   workflow_dispatch:
+
 jobs:
   check_hash:
     runs-on: ubuntu-latest
 
     steps:
-      - name: cehckout repo
+      - name: checkut repo
         uses: actions/checkout@v3
 
-      - name: check if exists
-        id: check_file
+      - name: check if files exist
+        id: check_files
         run: |
           if [ ! -f "dll/latest.dll" ]; then
             echo "File latest.dll not found!"
             exit 1
           fi
+          if [ ! -f "dll/beta.dll" ]; then
+            echo "File beta.dll not found!"
+            exit 1
+          fi
 
-      - name: get hash
+      - name: get hashes for both files
         id: calculate_hash
         run: |
-          sha256sum dll/latest.dll | awk '{ print $1 }' > output.txt
+          latest_hash=$(sha256sum dll/latest.dll | awk '{ print $1 }')
+          beta_hash=$(sha256sum dll/beta.dll | awk '{ print $1 }')
 
-      - name: save  to file
+          
+          echo '{
+            "latest": "'$latest_hash'",
+            "beta: "'$beta_hash'"
+          }' > dll_hashes.json
+
+      - name: commit json
         uses: actions/upload-artifact@v3
         with:
-          name: output-hash
-          path: dll_hash.txt
-      - name: commit file with hashes (crazy)
-        if: success()  
+          name: dll-hashes
+          path: dll_hashes.json
+
+      - name: commit file with hashes
+        if: success()
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           
-          git add output.txt
-          git commit -m "fix hash"
-          
+          git add dll_hashes.json
+          git commit -m "update hashes"
           
           git status
           
