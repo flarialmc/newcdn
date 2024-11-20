@@ -1,0 +1,33 @@
+name: Check SHA256 Hash of latest.dll
+
+on:
+  push:
+    paths:
+      - 'test/latest.dll'  # Specify the path to your latest.dll file
+
+jobs:
+  check_hash:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: cehckout repo
+        uses: actions/checkout@v3
+
+      - name: check if exists
+        id: check_file
+        run: |
+          if [ ! -f "test/latest.dll" ]; then
+            echo "File latest.dll not found!"
+            exit 1
+          fi
+
+      - name: get hash
+        id: calculate_hash
+        run: |
+          sha256sum test/latest.dll | awk '{ print $1 }' > output.txt
+
+      - name: save  to file
+        uses: actions/upload-artifact@v3
+        with:
+          name: output-hash
+          path: output.txt
