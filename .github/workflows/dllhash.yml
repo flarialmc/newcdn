@@ -1,4 +1,4 @@
-name: Check SHA256 Hash of latest.dll
+name: make hashbrowns 
 
 on:
   push:
@@ -30,7 +30,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: output-hash
-          path: output.txt
+          path: dll_hash.txt
       - name: commit file with hashes (crazy)
         if: success()  
         run: |
