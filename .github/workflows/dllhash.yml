@@ -39,12 +39,7 @@ jobs:
             "Beta": "'$beta_hash'"
           }' > dll_hashes.json
 
-      - name: commit json
-        uses: actions/upload-artifact@v3
-        with:
-          name: dll-hashes
-          path: dll_hashes.json
-
+      
       - name: commit file with hashes
         if: success()
         run: |
