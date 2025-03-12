@@ -1,4 +1,4 @@
 {
-  "version": "1.2.3",
+  "version": "2.1",
   "downloadUrl": "http://example.com/Flarial_1.2.3.exe"
 }
