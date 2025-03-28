@@ -12,3 +12,5 @@
 1.21.44 https://jiayi-api.vercel.app/api/v1/minecraft/download_url?version=1.21.44.1&arch=x64
 1.21.51 https://jiayi-api.vercel.app/api/v1/minecraft/download_url?version=1.21.51.1&arch=x64
 1.21.60 https://jiayi-api.vercel.app/api/v1/minecraft/download_url?version=1.21.60.1&arch=x64
+1.21.70 https://jiayi-api.vercel.app/api/v1/minecraft/download_url?version=1.21.70.3&arch=x64
+1.21.71 https://jiayi-api.vercel.app/api/v1/minecraft/download_url?version=1.21.71.1&arch=x64
