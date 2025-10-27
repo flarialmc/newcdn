@@ -6,8 +6,6 @@ on:
       - 'launcher/Flarial.Launcher.exe'
       - 'dll_hashes.json'
       - 'launcher/NewSupported.txt'
-      - 'dll/latest.dll'
-      - 'dll/beta.dll'
   workflow_dispatch:
 
 jobs:
