@@ -3,7 +3,6 @@ name: Upload to Cloudflare R2
 on:
   push:
     paths:
-      - 'launcher/launcherVersion.txt'
       - 'launcher/Flarial.Launcher.exe'
       - 'dll_hashes.json'
       - 'launcher/NewSupported.txt'
