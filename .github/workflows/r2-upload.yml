@@ -3,6 +3,7 @@ name: Upload to Cloudflare R2
 on:
   push:
     paths:
+      - 'launcher/launcherVersion.txt'
       - 'launcher/Flarial.Launcher.exe'
       - 'dll_hashes.json'
       - 'launcher/NewSupported.txt'
@@ -29,35 +30,48 @@ jobs:
           R2_ENDPOINT: https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com
           R2_BUCKET: ${{ secrets.R2_BUCKET_NAME }}
         run: |
-          # Upload Flarial Launcher executable
+          # Upload Flarial Launcher version metadata.
+
+          if [ -f "launcher/launcherVersion.txt" ]; then
+            aws s3 cp launcher/launcherVersion.txt s3://${R2_BUCKET}/launcher/launcherVersion.txt \
+              --endpoint-url ${R2_ENDPOINT}
+            echo "✓ Uploaded launcherVersion.txt"
+          fi
+
+          # Upload Flarial Launcher executable.
+          
           if [ -f "launcher/Flarial.Launcher.exe" ]; then
             aws s3 cp launcher/Flarial.Launcher.exe s3://${R2_BUCKET}/launcher/Flarial.Launcher.exe \
               --endpoint-url ${R2_ENDPOINT}
             echo "✓ Uploaded Flarial.Launcher.exe"
           fi
 
-          # Upload dll hashes JSON
+          # Upload DLL hashes metadata.
+
           if [ -f "dll_hashes.json" ]; then
             aws s3 cp dll_hashes.json s3://${R2_BUCKET}/dll_hashes.json \
               --endpoint-url ${R2_ENDPOINT}
             echo "✓ Uploaded dll_hashes.json"
           fi
 
-          # Upload supported versions text file
+          # Upload supported versions metadata.
+
           if [ -f "launcher/NewSupported.txt" ]; then
             aws s3 cp launcher/NewSupported.txt s3://${R2_BUCKET}/launcher/NewSupported.txt \
               --endpoint-url ${R2_ENDPOINT}
             echo "✓ Uploaded NewSupported.txt"
           fi
 
-          # Upload latest DLL
+          # Upload release build of the client.
+
           if [ -f "dll/latest.dll" ]; then
             aws s3 cp dll/latest.dll s3://${R2_BUCKET}/dll/latest.dll \
               --endpoint-url ${R2_ENDPOINT}
             echo "✓ Uploaded latest.dll"
           fi
 
-          # Upload beta DLL
+          # Upload beta build of the client.
+
           if [ -f "dll/beta.dll" ]; then
             aws s3 cp dll/beta.dll s3://${R2_BUCKET}/dll/beta.dll \
               --endpoint-url ${R2_ENDPOINT}
