@@ -1,0 +1,73 @@
+name: Upload to Cloudflare R2
+
+on:
+  push:
+    paths:
+      - 'launcher/Flarial.Launcher.exe'
+      - 'dll_hashes.json'
+      - 'launcher/NewSupported.txt'
+      - 'dll/latest.dll'
+      - 'dll/beta.dll'
+  workflow_dispatch:
+
+jobs:
+  upload-to-r2:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Configure AWS CLI for R2
+        run: |
+          aws configure set aws_access_key_id ${{ secrets.R2_ACCESS_KEY_ID }}
+          aws configure set aws_secret_access_key ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          aws configure set region auto
+
+      - name: Upload files to R2
+        env:
+          R2_ENDPOINT: https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com
+          R2_BUCKET: ${{ secrets.R2_BUCKET_NAME }}
+        run: |
+          # Upload Flarial Launcher executable
+          if [ -f "launcher/Flarial.Launcher.exe" ]; then
+            aws s3 cp launcher/Flarial.Launcher.exe s3://${R2_BUCKET}/launcher/Flarial.Launcher.exe \
+              --endpoint-url ${R2_ENDPOINT}
+            echo "✓ Uploaded Flarial.Launcher.exe"
+          fi
+
+          # Upload dll hashes JSON
+          if [ -f "dll_hashes.json" ]; then
+            aws s3 cp dll_hashes.json s3://${R2_BUCKET}/dll_hashes.json \
+              --endpoint-url ${R2_ENDPOINT}
+            echo "✓ Uploaded dll_hashes.json"
+          fi
+
+          # Upload supported versions text file
+          if [ -f "launcher/NewSupported.txt" ]; then
+            aws s3 cp launcher/NewSupported.txt s3://${R2_BUCKET}/launcher/NewSupported.txt \
+              --endpoint-url ${R2_ENDPOINT}
+            echo "✓ Uploaded NewSupported.txt"
+          fi
+
+          # Upload latest DLL
+          if [ -f "dll/latest.dll" ]; then
+            aws s3 cp dll/latest.dll s3://${R2_BUCKET}/dll/latest.dll \
+              --endpoint-url ${R2_ENDPOINT}
+            echo "✓ Uploaded latest.dll"
+          fi
+
+          # Upload beta DLL
+          if [ -f "dll/beta.dll" ]; then
+            aws s3 cp dll/beta.dll s3://${R2_BUCKET}/dll/beta.dll \
+              --endpoint-url ${R2_ENDPOINT}
+            echo "✓ Uploaded beta.dll"
+          fi
+
+      - name: Verify uploads
+        env:
+          R2_ENDPOINT: https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com
+          R2_BUCKET: ${{ secrets.R2_BUCKET_NAME }}
+        run: |
+          echo "Files in R2 bucket:"
+          aws s3 ls s3://${R2_BUCKET}/ --recursive --endpoint-url ${R2_ENDPOINT}
