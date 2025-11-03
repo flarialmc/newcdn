@@ -4,8 +4,11 @@ on:
   push:
     paths:
       - 'launcher/Flarial.Launcher.exe'
-      - 'dll_hashes.json'
       - 'launcher/NewSupported.txt'
+  workflow_run:
+    workflows: ["make hashbrowns"]
+    types:
+      - completed
   workflow_dispatch:
 
 jobs:
