@@ -1,4 +1,4 @@
 {
-  "version": "2.1.25.0",
+  "version": "2.1.25.1",
   "downloadUrl": "https://raw.githubusercontent.com/flarialmc/newcdn/main/launcher/Flarial.Launcher.exe"
 }
