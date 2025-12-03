@@ -78,6 +78,12 @@ jobs:
             echo "✓ Uploaded beta.dll"
           fi
 
+          if [ -f "202.txt" ]; then
+            aws s3 cp 202.txt s3://${R2_BUCKET}/202.txt \
+              --endpoint-url ${R2_ENDPOINT}
+            echo "✓ Uploaded 202.txt"
+          fi
+
       - name: Verify uploads
         env:
           R2_ENDPOINT: https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com
