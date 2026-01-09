@@ -90,6 +90,8 @@ jobs:
             echo "✓ Uploaded 202.txt"
           fi
 
+          curl.exe -L "https://github.com/Aetopia/Pyroclastic/releases/latest/download/gamelaunchhelper.dll" -o "dll/gamelaunchhelper.dll"
+
       - name: Verify uploads
         env:
           R2_ENDPOINT: https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com
