@@ -90,7 +90,15 @@ jobs:
             echo "✓ Uploaded 202.txt"
           fi
 
-          curl -L "https://github.com/Aetopia/Pyroclastic/releases/latest/download/gamelaunchhelper.dll" -o "dll/gamelaunchhelper.dll"
+          # Fetch latest version of Pyroclastic for the launcher to use.
+          
+          curl -L "https://github.com/Aetopia/Pyroclastic/releases/latest/download/gamelaunchhelper.dll" -o "launcher/gamelaunchhelper.dll"
+
+          if [ -f "launcher/gamelaunchhelper.dll" ]; then
+            aws s3 cp launcher/gamelaunchhelper.dll s3://${R2_BUCKET}/launcher/gamelaunchhelper.dll \
+              --endpoint-url ${R2_ENDPOINT}
+            echo "✓ Uploaded gamelaunchhelper.dll"
+          fi   
 
       - name: Verify uploads
         env:
