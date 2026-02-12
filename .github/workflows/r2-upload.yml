@@ -67,6 +67,12 @@ jobs:
               --endpoint-url ${R2_ENDPOINT}
             echo "✓ Uploaded Flarial.Bootstrapper.exe"
           fi
+
+          if [ -f "launcher/Flarial.Version.Changer.exe" ]; then
+            aws s3 cp launcher/Flarial.Version.Changer.exe s3://${R2_BUCKET}/launcher/Flarial.Version.Changer.exe \
+              --endpoint-url ${R2_ENDPOINT}
+            echo "✓ Uploaded Flarial.Version.Changer.exe"
+          fi
           
           # Upload release build of the client.
 
