@@ -250,6 +250,16 @@
     "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS04MTk0OGJj"
   },
   {
+    "name": "release-52018af",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-52018af",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-52018af",
+    "commit": {
+      "sha": "76e6b41def5d8f71f0a8a5316b5f9f1af8b5f815",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/76e6b41def5d8f71f0a8a5316b5f9f1af8b5f815"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS01MjAxOGFm"
+  },
+  {
     "name": "release-8856ed3",
     "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-8856ed3",
     "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-8856ed3",
@@ -288,15 +298,5 @@
       "url": "https://api.github.com/repos/flarialmc/newcdn/commits/1a7834132e183d7b010b460cbdcaf3f8f027585a"
     },
     "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS05NjBmYzNm"
-  },
-  {
-    "name": "release-750a759",
-    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-750a759",
-    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-750a759",
-    "commit": {
-      "sha": "063ee89f089aa70161cfba8cea66a2e37928f9d7",
-      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/063ee89f089aa70161cfba8cea66a2e37928f9d7"
-    },
-    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS03NTBhNzU5"
   }
 ]
