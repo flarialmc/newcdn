@@ -5,6 +5,7 @@ on:
     paths:
       - 'launcher/Flarial.Launcher.exe'
       - 'launcher/NewSupported.txt'
+      - 'launcher/Supported.json'
   workflow_run:
     workflows: ["make hashbrowns"]
     types:
@@ -60,6 +61,12 @@ jobs:
             aws s3 cp launcher/NewSupported.txt s3://${R2_BUCKET}/launcher/NewSupported.txt \
               --endpoint-url ${R2_ENDPOINT}
             echo "✓ Uploaded NewSupported.txt"
+          fi
+
+          if [ -f "launcher/Supported.json" ]; then
+            aws s3 cp launcher/Supported.json s3://${R2_BUCKET}/launcher/Supported.json \
+              --endpoint-url ${R2_ENDPOINT}
+            echo "✓ Uploaded Supported.json"
           fi
           
           if [ -f "launcher/Flarial.Bootstrapper.exe" ]; then
