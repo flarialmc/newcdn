@@ -1,0 +1,302 @@
+[
+  {
+    "name": "release-fdcae05",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-fdcae05",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-fdcae05",
+    "commit": {
+      "sha": "7fdd98dc4b30d9e2335253531ebc457fcff911f4",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/7fdd98dc4b30d9e2335253531ebc457fcff911f4"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS1mZGNhZTA1"
+  },
+  {
+    "name": "release-fd9a8b6",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-fd9a8b6",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-fd9a8b6",
+    "commit": {
+      "sha": "0edb5819620e5f8a0d5268fb4c6c279fe64d1fd8",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/0edb5819620e5f8a0d5268fb4c6c279fe64d1fd8"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS1mZDlhOGI2"
+  },
+  {
+    "name": "release-f81562c",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-f81562c",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-f81562c",
+    "commit": {
+      "sha": "62eabf4331c23be9e7c310ed4fb276e2d5d5c352",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/62eabf4331c23be9e7c310ed4fb276e2d5d5c352"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS1mODE1NjJj"
+  },
+  {
+    "name": "release-f863d3e",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-f863d3e",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-f863d3e",
+    "commit": {
+      "sha": "69960445c67165f56464fa275114fc74e88cc328",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/69960445c67165f56464fa275114fc74e88cc328"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS1mODYzZDNl"
+  },
+  {
+    "name": "release-f06d68e",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-f06d68e",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-f06d68e",
+    "commit": {
+      "sha": "c8f2b3de0b98f6366d2f51a436a5e10eddd62694",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/c8f2b3de0b98f6366d2f51a436a5e10eddd62694"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS1mMDZkNjhl"
+  },
+  {
+    "name": "release-eb388bf",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-eb388bf",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-eb388bf",
+    "commit": {
+      "sha": "3c8bb8cf8af0146e361b8766fa7be7a51a372df7",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/3c8bb8cf8af0146e361b8766fa7be7a51a372df7"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS1lYjM4OGJm"
+  },
+  {
+    "name": "release-e893d25",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-e893d25",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-e893d25",
+    "commit": {
+      "sha": "6eb28d741d16ebf72d6d323fb16ca06887990750",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/6eb28d741d16ebf72d6d323fb16ca06887990750"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS1lODkzZDI1"
+  },
+  {
+    "name": "release-e213cb8",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-e213cb8",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-e213cb8",
+    "commit": {
+      "sha": "dd533d120adb9b0ae5560e0285941c1d8e8402c3",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/dd533d120adb9b0ae5560e0285941c1d8e8402c3"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS1lMjEzY2I4"
+  },
+  {
+    "name": "release-e6d5f29",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-e6d5f29",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-e6d5f29",
+    "commit": {
+      "sha": "c0e153e2abc27821f694c59bde37f7d72f185975",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/c0e153e2abc27821f694c59bde37f7d72f185975"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS1lNmQ1ZjI5"
+  },
+  {
+    "name": "release-dad3ec7",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-dad3ec7",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-dad3ec7",
+    "commit": {
+      "sha": "636da9bb903999548a82ebf89221b061b16a3ef2",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/636da9bb903999548a82ebf89221b061b16a3ef2"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS1kYWQzZWM3"
+  },
+  {
+    "name": "release-cefed79",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-cefed79",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-cefed79",
+    "commit": {
+      "sha": "159475913edfeb3d80848df7bf442897dd1f15a7",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/159475913edfeb3d80848df7bf442897dd1f15a7"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS1jZWZlZDc5"
+  },
+  {
+    "name": "release-cbd941a",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-cbd941a",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-cbd941a",
+    "commit": {
+      "sha": "d468dcb915ea83b3f652331bba075596d236bff3",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/d468dcb915ea83b3f652331bba075596d236bff3"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS1jYmQ5NDFh"
+  },
+  {
+    "name": "release-c95d087",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-c95d087",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-c95d087",
+    "commit": {
+      "sha": "2639c6d8b93018d6d4298bbe29dfd5402e6889d3",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/2639c6d8b93018d6d4298bbe29dfd5402e6889d3"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS1jOTVkMDg3"
+  },
+  {
+    "name": "release-c28e25b",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-c28e25b",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-c28e25b",
+    "commit": {
+      "sha": "8823cf6b629215cadd95f42a1ef964a922205543",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/8823cf6b629215cadd95f42a1ef964a922205543"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS1jMjhlMjVi"
+  },
+  {
+    "name": "release-c2fc9c4",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-c2fc9c4",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-c2fc9c4",
+    "commit": {
+      "sha": "f58b4b7bec5e91cb50ab2ba8b925198d124f7ee6",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/f58b4b7bec5e91cb50ab2ba8b925198d124f7ee6"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS1jMmZjOWM0"
+  },
+  {
+    "name": "release-c1abd47",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-c1abd47",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-c1abd47",
+    "commit": {
+      "sha": "ef16d2f1200ea754efb5d0e2635ca74448f4face",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/ef16d2f1200ea754efb5d0e2635ca74448f4face"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS1jMWFiZDQ3"
+  },
+  {
+    "name": "release-bdba3b7",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-bdba3b7",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-bdba3b7",
+    "commit": {
+      "sha": "eaee7559ed46573bbf8888fafaa90930d32e1420",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/eaee7559ed46573bbf8888fafaa90930d32e1420"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS1iZGJhM2I3"
+  },
+  {
+    "name": "release-b859654",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-b859654",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-b859654",
+    "commit": {
+      "sha": "fb43092d390347bda879d07ca8e0e28af15ee74c",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/fb43092d390347bda879d07ca8e0e28af15ee74c"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS1iODU5NjU0"
+  },
+  {
+    "name": "release-b1a45c9",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-b1a45c9",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-b1a45c9",
+    "commit": {
+      "sha": "115fca49f3c695957df77898b97b40d7280c6f84",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/115fca49f3c695957df77898b97b40d7280c6f84"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS1iMWE0NWM5"
+  },
+  {
+    "name": "release-a61ad6e",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-a61ad6e",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-a61ad6e",
+    "commit": {
+      "sha": "a8f56f62ba38b2f6506c385f794bfab47fd4789c",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/a8f56f62ba38b2f6506c385f794bfab47fd4789c"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS1hNjFhZDZl"
+  },
+  {
+    "name": "release-8387443",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-8387443",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-8387443",
+    "commit": {
+      "sha": "98440b394116fb91aa3d68b4d237a3eb672014ca",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/98440b394116fb91aa3d68b4d237a3eb672014ca"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS04Mzg3NDQz"
+  },
+  {
+    "name": "release-7761363",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-7761363",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-7761363",
+    "commit": {
+      "sha": "a19a20790b3a5b08a3e9c660cd296d7007674cb6",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/a19a20790b3a5b08a3e9c660cd296d7007674cb6"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS03NzYxMzYz"
+  },
+  {
+    "name": "release-4406337",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-4406337",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-4406337",
+    "commit": {
+      "sha": "d525b73e155cc04b610f3e621460f2448db15e20",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/d525b73e155cc04b610f3e621460f2448db15e20"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS00NDA2MzM3"
+  },
+  {
+    "name": "release-2490608",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-2490608",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-2490608",
+    "commit": {
+      "sha": "f156d91415b1515407650e149f362016bd607e57",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/f156d91415b1515407650e149f362016bd607e57"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS0yNDkwNjA4"
+  },
+  {
+    "name": "release-164937a",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-164937a",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-164937a",
+    "commit": {
+      "sha": "696b2c0831cb907266994b4e2ee90fbbc2c87a9d",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/696b2c0831cb907266994b4e2ee90fbbc2c87a9d"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS0xNjQ5Mzdh"
+  },
+  {
+    "name": "release-95627e1",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-95627e1",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-95627e1",
+    "commit": {
+      "sha": "edfa6768b318a02fbc353f3747366a44710d4301",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/edfa6768b318a02fbc353f3747366a44710d4301"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS05NTYyN2Ux"
+  },
+  {
+    "name": "release-81948bc",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-81948bc",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-81948bc",
+    "commit": {
+      "sha": "c62449a0735049d7a9ef31a28aefe769e2d913ef",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/c62449a0735049d7a9ef31a28aefe769e2d913ef"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS04MTk0OGJj"
+  },
+  {
+    "name": "release-52018af",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-52018af",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-52018af",
+    "commit": {
+      "sha": "76e6b41def5d8f71f0a8a5316b5f9f1af8b5f815",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/76e6b41def5d8f71f0a8a5316b5f9f1af8b5f815"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS01MjAxOGFm"
+  },
+  {
+    "name": "release-8856ed3",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-8856ed3",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-8856ed3",
+    "commit": {
+      "sha": "f412e854b6c23318400a9e703168d9a03198dfd1",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/f412e854b6c23318400a9e703168d9a03198dfd1"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS04ODU2ZWQz"
+  },
+  {
+    "name": "release-4388c6e",
+    "zipball_url": "https://api.github.com/repos/flarialmc/newcdn/zipball/refs/tags/release-4388c6e",
+    "tarball_url": "https://api.github.com/repos/flarialmc/newcdn/tarball/refs/tags/release-4388c6e",
+    "commit": {
+      "sha": "45ffe13f3e1de30bf1e2d70fca664930b936e8df",
+      "url": "https://api.github.com/repos/flarialmc/newcdn/commits/45ffe13f3e1de30bf1e2d70fca664930b936e8df"
+    },
+    "node_id": "REF_kwDOK6PP7blyZWZzL3RhZ3MvcmVsZWFzZS00Mzg4YzZl"
+  }
+]
