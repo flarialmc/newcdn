@@ -6,6 +6,7 @@ on:
       - 'launcher/Flarial.Launcher.exe'
       - 'launcher/NewSupported.txt'
       - 'launcher/Supported.json'
+      - 'launcher/Promotions.json'
   workflow_run:
     workflows: ["make hashbrowns"]
     types:
@@ -68,6 +69,12 @@ jobs:
               --endpoint-url ${R2_ENDPOINT}
             echo "✓ Uploaded Supported.json"
           fi
+          
+          if [ -f "launcher/Promotions.json" ]; then
+            aws s3 cp launcher/Promotions.json s3://${R2_BUCKET}/launcher/Promotions.json \
+              --endpoint-url ${R2_ENDPOINT}
+            echo "✓ Uploaded Promotions.json"
+          fi          
           
           if [ -f "launcher/Flarial.Bootstrapper.exe" ]; then
             aws s3 cp launcher/Flarial.Bootstrapper.exe s3://${R2_BUCKET}/launcher/Flarial.Bootstrapper.exe \
