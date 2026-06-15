@@ -7,6 +7,7 @@ on:
       - 'launcher/NewSupported.txt'
       - 'launcher/Supported.json'
       - 'launcher/Promotions.json'
+      - 'android/Flarial.apk'
   workflow_run:
     workflows: ["make hashbrowns"]
     types:
@@ -108,6 +109,15 @@ jobs:
             aws s3 cp 202.txt s3://${R2_BUCKET}/202.txt \
               --endpoint-url ${R2_ENDPOINT}
             echo "✓ Uploaded 202.txt"
+          fi
+
+
+          # Upload latest Android APK.
+
+          if [ -f "android/Flarial.apk" ]; then
+            aws s3 cp android/Flarial.apk s3://${R2_BUCKET}/android/Flarial.apk \
+              --endpoint-url ${R2_ENDPOINT}
+            echo "✓ Uploaded android/Flarial.apk"
           fi
 
           # Fetch latest version of Pyroclastic for the launcher to use.
