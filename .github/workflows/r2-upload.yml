@@ -118,12 +118,22 @@ jobs:
             aws s3 cp Android/Flarial.apk s3://${R2_BUCKET}/Android/Flarial.apk \
               --endpoint-url ${R2_ENDPOINT}
             echo "✓ Uploaded Android/Flarial.apk"
+
+            # Keep the legacy lowercase CDN path in sync for older clients/tools.
+            aws s3 cp Android/Flarial.apk s3://${R2_BUCKET}/android/Flarial.apk \
+              --endpoint-url ${R2_ENDPOINT}
+            echo "✓ Uploaded android/Flarial.apk"
           fi
 
           if [ -f "Android/AndroidHash.json" ]; then
             aws s3 cp Android/AndroidHash.json s3://${R2_BUCKET}/Android/AndroidHash.json \
               --endpoint-url ${R2_ENDPOINT}
             echo "✓ Uploaded Android/AndroidHash.json"
+
+            # Keep the legacy lowercase hash path in sync too.
+            aws s3 cp Android/AndroidHash.json s3://${R2_BUCKET}/android/AndroidHash.json \
+              --endpoint-url ${R2_ENDPOINT}
+            echo "✓ Uploaded android/AndroidHash.json"
           fi
 
           # Fetch latest version of Pyroclastic for the launcher to use.
