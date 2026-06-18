@@ -7,8 +7,13 @@ on:
       - 'launcher/NewSupported.txt'
       - 'launcher/Supported.json'
       - 'launcher/Promotions.json'
-      - 'Android/Flarial.apk'
-      - 'Android/AndroidHash.json'
+      - '.github/workflows/r2-upload.yml'
+      # Android APK uploads are intentionally not triggered directly by
+      # Android/Flarial.apk pushes. The Android hash workflow commits
+      # AndroidHash.json immediately after the APK changes; uploading on the
+      # APK push creates a race where R2 can serve a new APK with the old hash.
+      # Let the workflow_run from "make android hashbrowns" publish the
+      # validated APK+hash pair atomically instead.
   workflow_run:
     workflows: ["make hashbrowns", "make android hashbrowns"]
     types:
@@ -113,8 +118,55 @@ jobs:
           fi
 
           # Upload latest Android APK and hash metadata.
+          # Guard against publishing mismatched APK/hash pairs; Android clients
+          # treat that as a corrupt APK.
 
-          if [ -f "Android/Flarial.apk" ]; then
+          if [ -f "Android/Flarial.apk" ] || [ -f "Android/AndroidHash.json" ]; then
+            if [ ! -f "Android/Flarial.apk" ] || [ ! -f "Android/AndroidHash.json" ]; then
+              echo "Android APK/hash must be uploaded together" >&2
+              exit 1
+            fi
+
+            actual_android_hash=$(sha256sum Android/Flarial.apk | awk '{ print $1 }')
+            expected_android_hash=$(python3 -c 'import json; print(json.load(open("Android/AndroidHash.json"))["Android"])')
+
+            if [ "${actual_android_hash}" != "${expected_android_hash}" ]; then
+              echo "Android hash mismatch; refusing to publish corrupt CDN state" >&2
+              echo "  APK:  ${actual_android_hash}" >&2
+              echo "  JSON: ${expected_android_hash}" >&2
+              exit 1
+            fi
+
+            android_backup_dir=$(mktemp -d)
+            android_have_backup=0
+            if aws s3 cp s3://${R2_BUCKET}/Android/Flarial.apk "${android_backup_dir}/Flarial.apk" \
+                --endpoint-url ${R2_ENDPOINT} && \
+               aws s3 cp s3://${R2_BUCKET}/Android/AndroidHash.json "${android_backup_dir}/AndroidHash.json" \
+                --endpoint-url ${R2_ENDPOINT}; then
+              android_have_backup=1
+            else
+              echo "No complete existing Android CDN pair to back up; continuing"
+            fi
+
+            android_publish_started=0
+            restore_android_pair() {
+              rc=$?
+              if [ "${rc}" -ne 0 ] && [ "${android_publish_started}" = "1" ] && [ "${android_have_backup}" = "1" ]; then
+                echo "Android publish failed; restoring previous APK/hash pair" >&2
+                aws s3 cp "${android_backup_dir}/Flarial.apk" s3://${R2_BUCKET}/Android/Flarial.apk \
+                  --endpoint-url ${R2_ENDPOINT} || true
+                aws s3 cp "${android_backup_dir}/Flarial.apk" s3://${R2_BUCKET}/android/Flarial.apk \
+                  --endpoint-url ${R2_ENDPOINT} || true
+                aws s3 cp "${android_backup_dir}/AndroidHash.json" s3://${R2_BUCKET}/Android/AndroidHash.json \
+                  --endpoint-url ${R2_ENDPOINT} || true
+                aws s3 cp "${android_backup_dir}/AndroidHash.json" s3://${R2_BUCKET}/android/AndroidHash.json \
+                  --endpoint-url ${R2_ENDPOINT} || true
+              fi
+              exit "${rc}"
+            }
+            trap restore_android_pair EXIT
+
+            android_publish_started=1
             aws s3 cp Android/Flarial.apk s3://${R2_BUCKET}/Android/Flarial.apk \
               --endpoint-url ${R2_ENDPOINT}
             echo "✓ Uploaded Android/Flarial.apk"
@@ -123,9 +175,7 @@ jobs:
             aws s3 cp Android/Flarial.apk s3://${R2_BUCKET}/android/Flarial.apk \
               --endpoint-url ${R2_ENDPOINT}
             echo "✓ Uploaded android/Flarial.apk"
-          fi
 
-          if [ -f "Android/AndroidHash.json" ]; then
             aws s3 cp Android/AndroidHash.json s3://${R2_BUCKET}/Android/AndroidHash.json \
               --endpoint-url ${R2_ENDPOINT}
             echo "✓ Uploaded Android/AndroidHash.json"
@@ -134,6 +184,7 @@ jobs:
             aws s3 cp Android/AndroidHash.json s3://${R2_BUCKET}/android/AndroidHash.json \
               --endpoint-url ${R2_ENDPOINT}
             echo "✓ Uploaded android/AndroidHash.json"
+            trap - EXIT
           fi
 
           # Fetch latest version of Pyroclastic for the launcher to use.
