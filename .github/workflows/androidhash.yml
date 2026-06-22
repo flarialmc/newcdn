@@ -1,4 +1,4 @@
-name: make android hashbrowns
+name: update android version metadata
 
 on:
   push:
@@ -24,25 +24,30 @@ jobs:
             exit 1
           fi
 
-      - name: get hash for Android APK
+      - name: update Android version metadata
         run: |
-          apk_hash=$(sha256sum Android/Flarial.apk | awk '{ print $1 }')
+          android_version=$(jq -r '.versionName // .Android // empty' Android/AndroidHash.json)
+          if [ -z "$android_version" ]; then
+            echo "Android version metadata is missing"
+            exit 1
+          fi
           cat > Android/AndroidHash.json <<EOF
           {
-            "Android": "${apk_hash}"
+            "Android": "${android_version}",
+            "versionName": "${android_version}"
           }
           EOF
 
-      - name: commit hash file
+      - name: commit version metadata file
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
 
           git add Android/AndroidHash.json
           if git diff --cached --quiet; then
-            echo "AndroidHash.json already up to date"
+            echo "AndroidHash.json version metadata already up to date"
             exit 0
           fi
 
-          git commit -m "update Android hash"
+          git commit -m "update Android version metadata"
           git push
