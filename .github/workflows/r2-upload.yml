@@ -79,7 +79,7 @@ jobs:
           fi
 
           if [ -f "launcher/Versions.json" ]; then
-            aws s3 cp launcher/Supported.json s3://${R2_BUCKET}/launcher/Versions.json \
+            aws s3 cp launcher/Versions.json s3://${R2_BUCKET}/launcher/Versions.json \
               --endpoint-url ${R2_ENDPOINT}
             echo "✓ Uploaded Versions.json"
           fi
