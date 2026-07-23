@@ -8,6 +8,8 @@ on:
       - 'launcher/Supported.json'
       - 'launcher/Versions.json'
       - 'launcher/Promotions.json'
+      - 'blacklist_dll_names.txt'
+      - 'blacklist_dll_hashes.txt'
       - '.github/workflows/r2-upload.yml'
       # Android APK uploads are intentionally not triggered directly by
       # Android/Flarial.apk pushes. The Android hash workflow commits
@@ -62,6 +64,22 @@ jobs:
             aws s3 cp dll_hashes.json s3://${R2_BUCKET}/dll_hashes.json \
               --endpoint-url ${R2_ENDPOINT}
             echo "✓ Uploaded dll_hashes.json"
+          fi
+
+          # Upload third-party DLL deny lists.
+
+          if [ -f "blacklist_dll_names.txt" ]; then
+            aws s3 cp blacklist_dll_names.txt s3://${R2_BUCKET}/blacklist_dll_names.txt \
+              --content-type text/plain \
+              --endpoint-url ${R2_ENDPOINT}
+            echo "✓ Uploaded blacklist_dll_names.txt"
+          fi
+
+          if [ -f "blacklist_dll_hashes.txt" ]; then
+            aws s3 cp blacklist_dll_hashes.txt s3://${R2_BUCKET}/blacklist_dll_hashes.txt \
+              --content-type text/plain \
+              --endpoint-url ${R2_ENDPOINT}
+            echo "✓ Uploaded blacklist_dll_hashes.txt"
           fi
 
           # Upload supported versions metadata.
