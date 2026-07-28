@@ -1,4 +1,6 @@
 {
-  "Android": "1.2.5",
-  "versionName": "1.2.5"
+  "Android": "1ad5d38f22cf4b368a2d93c64a83ce806b7d36af2603c840b791d930ea09a384",
+  "versionName": "1.2.5",
+  "versionCode": 54,
+  "isPlayStoreBack": false
 }
