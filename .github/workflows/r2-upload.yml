@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'launcher/Flarial.Launcher.exe'
+      - 'launcher/Flarial.Launcher.Installer.exe'
       - 'launcher/Flarial.Launcher.msix'
       - 'launcher/NewSupported.txt'
       - 'launcher/Supported.json'
@@ -43,7 +44,16 @@ jobs:
           R2_ENDPOINT: https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com
           R2_BUCKET: ${{ secrets.R2_BUCKET_NAME }}
         run: |
+          # Upload Launcher Installer
+         
+          if [ -f "launcher/Flarial.Launcher.Installer.exe" ]; then
+            aws s3 cp launcher/Flarial.Launcher.Installer.exe s3://${R2_BUCKET}/launcher/Flarial.Launcher.Installer.exe \
+              --endpoint-url ${R2_ENDPOINT}
+            echo "✓ Uploaded Flarial.Launcher.Installer.exe"
+          fi
+          
           # Upload Launcher Version
+         
           if [ -f "launcher/Flarial.Launcher.json" ]; then
             aws s3 cp launcher/Flarial.Launcher.json s3://${R2_BUCKET}/launcher/Flarial.Launcher.json \
               --endpoint-url ${R2_ENDPOINT}
@@ -51,6 +61,7 @@ jobs:
           fi
 
           # Upload Launcher Certificate
+          
           if [ -f "launcher/Flarial.Launcher.cer" ]; then
             aws s3 cp launcher/Flarial.Launcher.cer s3://${R2_BUCKET}/launcher/Flarial.Launcher.cer \
               --endpoint-url ${R2_ENDPOINT}
@@ -58,6 +69,7 @@ jobs:
           fi
 
           # Upload Launcher Package
+          
           if [ -f "launcher/Flarial.Launcher.msix" ]; then
             aws s3 cp launcher/Flarial.Launcher.msix s3://${R2_BUCKET}/launcher/Flarial.Launcher.msix \
               --endpoint-url ${R2_ENDPOINT}
