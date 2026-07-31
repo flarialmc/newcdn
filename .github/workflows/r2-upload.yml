@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'launcher/Flarial.Launcher.exe'
+      - 'launcher/Flarial.Launcher.msix'
       - 'launcher/NewSupported.txt'
       - 'launcher/Supported.json'
       - 'launcher/Versions.json'
@@ -42,6 +43,27 @@ jobs:
           R2_ENDPOINT: https://${{ secrets.R2_ACCOUNT_ID }}.r2.cloudflarestorage.com
           R2_BUCKET: ${{ secrets.R2_BUCKET_NAME }}
         run: |
+          # Upload Launcher Version
+          if [ -f "launcher/Flarial.Launcher.json" ]; then
+            aws s3 cp launcher/Flarial.Launcher.json s3://${R2_BUCKET}/launcher/Flarial.Launcher.json \
+              --endpoint-url ${R2_ENDPOINT}
+            echo "✓ Uploaded Flarial.Launcher.json"
+          fi
+
+          # Upload Launcher Certificate
+          if [ -f "launcher/Flarial.Launcher.cer" ]; then
+            aws s3 cp launcher/Flarial.Launcher.cer s3://${R2_BUCKET}/launcher/Flarial.Launcher.cer \
+              --endpoint-url ${R2_ENDPOINT}
+            echo "✓ Uploaded Flarial.Launcher.cer"
+          fi
+
+          # Upload Launcher Package
+          if [ -f "launcher/Flarial.Launcher.msix" ]; then
+            aws s3 cp launcher/Flarial.Launcher.msix s3://${R2_BUCKET}/launcher/Flarial.Launcher.msix \
+              --endpoint-url ${R2_ENDPOINT}
+            echo "✓ Uploaded Flarial.Launcher.msix"
+          fi
+          
           # Upload Flarial Launcher version metadata.
 
           if [ -f "launcher/launcherVersion.txt" ]; then
