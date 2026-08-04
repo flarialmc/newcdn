@@ -1,0 +1,18 @@
+[
+  {
+    "id": "testPostId",
+    "posted": 1785857964,
+    "title": "Test News",
+    "author": "guess who",
+    "content": "among us",
+    "important": false
+  },
+  {
+    "id": "someImportantPost",
+    "posted": 1785857964,
+    "title": "Introducing News",
+    "author": "Raspberry",
+    "content": "This is where we deliver news directly to the users. Join our Discord Server below for a much earlier and better news!\n\nhttps://discord.gg/flarial/",
+    "important": false
+  }
+]
