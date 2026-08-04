@@ -14,5 +14,13 @@
     "author": "Raspberry",
     "content": "This is where we deliver news directly to the users. Join our Discord Server below for a much earlier and better news!\n\nhttps://discord.gg/flarial/",
     "important": true
+  },
+  {
+    "id": "2640reminder",
+    "posted": 1785861943,
+    "title": "26.40 is not supported",
+    "author": "The Flarial Client Team",
+    "content": "The game have just updated to 26.40, we do not support this version yet.\nPlease wait for a few days for the developers to update the android client.\nJoin the Discord Server below to get more updates.\n\nhttps://discord.gg/flarial/",
+    "important": true
   }
 ]
