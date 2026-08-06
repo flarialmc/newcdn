@@ -28,7 +28,7 @@
     "posted": 1785996842,
     "title": "Common problems with 1.3.4",
     "author": "Raspberry",
-    "content": "Problems and their fixes:\nmisisng libc++shared.so: you have a pirated copy, buy the game.\n\"We only support 26.30\": typo, update both flarial and minecraft.\nShaders not working: shader's fault, not us, wait till those shader makers update their pack to work on 26.40.",
+    "content": "Problems and their fixes:\nmisisng libc++shared.so: you have a pirated copy, buy the game.\n\"We only support 26.30\": typo, update both flarial and minecraft.\nShaders not working: shader's fault, not us, wait till those shader makers update their pack to work on 26.40.\nMissing Pack Changer/Button Scaler: temporarily disabled.",
     "important":true
   }
 ]
