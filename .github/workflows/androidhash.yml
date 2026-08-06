@@ -24,30 +24,68 @@ jobs:
             exit 1
           fi
 
-      - name: update Android version metadata
+      - name: update Android release metadata from APK
         run: |
-          android_version=$(jq -r '.versionName // .Android // empty' Android/AndroidHash.json)
-          if [ -z "$android_version" ]; then
-            echo "Android version metadata is missing"
+          set -euo pipefail
+
+          apkanalyzer_bin="$(command -v apkanalyzer || true)"
+          if [ -z "${apkanalyzer_bin}" ]; then
+            for candidate in \
+              "${ANDROID_SDK_ROOT:-}/cmdline-tools/latest/bin/apkanalyzer" \
+              "${ANDROID_HOME:-}/cmdline-tools/latest/bin/apkanalyzer" \
+              "${ANDROID_HOME:-}/tools/bin/apkanalyzer"; do
+              if [ -x "${candidate}" ]; then
+                apkanalyzer_bin="${candidate}"
+                break
+              fi
+            done
+          fi
+          if [ -z "${apkanalyzer_bin}" ]; then
+            echo "apkanalyzer was not found in the GitHub-hosted Android SDK" >&2
             exit 1
           fi
-          cat > Android/AndroidHash.json <<EOF
-          {
-            "Android": "${android_version}",
-            "versionName": "${android_version}"
-          }
-          EOF
 
-      - name: commit version metadata file
+          apk_hash="$(sha256sum Android/Flarial.apk | awk '{ print $1 }')"
+          version_name="$("${apkanalyzer_bin}" manifest version-name Android/Flarial.apk)"
+          version_code="$("${apkanalyzer_bin}" manifest version-code Android/Flarial.apk)"
+          is_play_store_back="$(jq -r '.isPlayStoreBack // false' Android/AndroidHash.json 2>/dev/null || printf 'false')"
+
+          if ! [[ "${apk_hash}" =~ ^[0-9a-f]{64}$ ]]; then
+            echo "Could not calculate the APK SHA-256" >&2
+            exit 1
+          fi
+          if [ -z "${version_name}" ] || [ "${version_name}" = "null" ]; then
+            echo "Could not read versionName from the APK manifest" >&2
+            exit 1
+          fi
+          if ! [[ "${version_code}" =~ ^[0-9]+$ ]]; then
+            echo "Could not read a numeric versionCode from the APK manifest" >&2
+            exit 1
+          fi
+          if [ "${is_play_store_back}" != "true" ] && [ "${is_play_store_back}" != "false" ]; then
+            echo "isPlayStoreBack must be a JSON boolean" >&2
+            exit 1
+          fi
+
+          jq -n \
+            --arg hash "${apk_hash}" \
+            --arg versionName "${version_name}" \
+            --argjson versionCode "${version_code}" \
+            --argjson isPlayStoreBack "${is_play_store_back}" \
+            '{Android: $hash, versionName: $versionName, versionCode: $versionCode, isPlayStoreBack: $isPlayStoreBack}' \
+            > Android/AndroidHash.json.tmp
+          mv Android/AndroidHash.json.tmp Android/AndroidHash.json
+
+      - name: commit Android release metadata
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
 
           git add Android/AndroidHash.json
           if git diff --cached --quiet; then
-            echo "AndroidHash.json version metadata already up to date"
+            echo "AndroidHash.json release metadata already up to date"
             exit 0
           fi
 
-          git commit -m "update Android version metadata"
+          git commit -m "update Android release metadata"
           git push

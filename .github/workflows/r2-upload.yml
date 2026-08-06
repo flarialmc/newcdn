@@ -17,10 +17,10 @@ on:
       # Android/Flarial.apk pushes. The Android hash workflow commits
       # AndroidHash.json immediately after the APK changes; uploading on the
       # APK push creates a race where R2 can serve a new APK with the old hash.
-      # Let the workflow_run from "make android hashbrowns" publish the
+      # Let the workflow_run from "update android version metadata" publish the
       # validated APK+hash pair atomically instead.
   workflow_run:
-    workflows: ["make hashbrowns", "make android hashbrowns"]
+    workflows: ["make hashbrowns", "update android version metadata"]
     types:
       - completed
   workflow_dispatch:
