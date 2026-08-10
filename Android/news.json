@@ -21,7 +21,7 @@
     "title": "26.40 is now supported",
     "author": "The Flarial Client Team",
     "content": "Flarial now supports 26.40 update ASAP!",
-    "important": true
+    "important": false
   },
   {
     "id": "2640problems",
@@ -30,5 +30,13 @@
     "author": "Raspberry",
     "content": "Problems and their fixes:\nmisisng libc++shared.so: you have a pirated copy, buy the game.\n\"We only support 26.30\": typo, update both flarial and minecraft.\nShaders not working: shader's fault, not us, wait till those shader makers update their pack to work on 26.40.\nMissing Pack Changer/Button Scaler: temporarily disabled.",
     "important":false
+  },
+  {
+    "id":"impersonation",
+    "posted": 1786335052,
+    "title": "Important Announcement",
+    "author": "Flarial Development",
+    "content": "You may see \"Flarial\" on the Google Play Store by \"Venant Print\" (some french based printing).\n(package name \"com.flarialfff.diomondeemote\")\n\nWe are reminding you that this is a FAKE flarial listing, it does not have the client itself.\nYes, we've been trying to push to getting Flarial back on the Google Play Store.\nHOWEVER, it will be distributed under the Flarial Development developer account.\n(the old listing was under \"Ashank\" but we wasn't able to bring that back)\n\nSo PLEASE, if you encounter the fake app on the Google Play Store, report the app.",
+    "important": true
   }
 ]
