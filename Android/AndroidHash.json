@@ -1,8 +1,6 @@
 {
-  "Android": "502bf0ef552530524fff3c37d395cae77937a2675a7986739766356d8941283c",
-  "versionName": "1.3.10",
-  "versionCode": 2026080804,
-  "isPlayStoreBack": false,
-  "showBackup": "toPS",
-  "distributionTarget": "PS"
+  "Android": "ff9834863b6fde9e3051f0f68f89cd0f3176cd4eefaae5395a297d07b852c185",
+  "versionName": "1.3.11",
+  "versionCode": 2026081501,
+  "isPlayStoreBack": false
 }
