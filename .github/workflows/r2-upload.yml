@@ -2,9 +2,8 @@ name: Upload to Cloudflare R2
 
 on:
   push:
-    paths:
+    paths:    
       # Launcher Files
-      - 'launcher/Flarial.Launcher.exe'
       - 'launcher/Flarial.Launcher.msix'
       - 'launcher/Flarial.Launcher.Installer.exe'
 
@@ -38,7 +37,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7
 
       - name: Configure AWS CLI for R2
         run: |
