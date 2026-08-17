@@ -12,6 +12,7 @@ on:
       - 'launcher/Promotions.json'
       - 'blacklist_dll_names.txt'
       - 'blacklist_dll_hashes.txt'
+      - 'launcher/gamelaunchhelper.dll'
       - '.github/workflows/r2-upload.yml'
       # Android APK uploads are intentionally not triggered directly by
       # Android/Flarial.apk pushes. The Android hash workflow commits
@@ -246,10 +247,8 @@ jobs:
             trap - EXIT
           fi
 
-          # Fetch latest version of Pyroclastic for the launcher to use.
+          # Upload Game Launch Helper
           
-          curl -L "https://github.com/Aetopia/Pyroclastic/releases/latest/download/gamelaunchhelper.dll" -o "launcher/gamelaunchhelper.dll"
-
           if [ -f "launcher/gamelaunchhelper.dll" ]; then
             aws s3 cp launcher/gamelaunchhelper.dll s3://${R2_BUCKET}/launcher/gamelaunchhelper.dll \
               --endpoint-url ${R2_ENDPOINT}
