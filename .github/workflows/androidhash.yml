@@ -49,6 +49,8 @@ jobs:
           version_name="$("${apkanalyzer_bin}" manifest version-name Android/Flarial.apk)"
           version_code="$("${apkanalyzer_bin}" manifest version-code Android/Flarial.apk)"
           is_play_store_back="$(jq -r '.isPlayStoreBack // false' Android/AndroidHash.json 2>/dev/null || printf 'false')"
+          show_backup="$(jq -r '.showBackup // "none"' Android/AndroidHash.json 2>/dev/null || printf 'none')"
+          distribution_target="$(jq -r '.distributionTarget // "none"' Android/AndroidHash.json 2>/dev/null || printf 'none')"
 
           if ! [[ "${apk_hash}" =~ ^[0-9a-f]{64}$ ]]; then
             echo "Could not calculate the APK SHA-256" >&2
@@ -66,13 +68,23 @@ jobs:
             echo "isPlayStoreBack must be a JSON boolean" >&2
             exit 1
           fi
+          if [ "${show_backup}" != "none" ] && [ "${show_backup}" != "toPS" ] && [ "${show_backup}" != "toStandard" ]; then
+            echo "showBackup must be one of: none, toPS, toStandard" >&2
+            exit 1
+          fi
+          if [ "${distribution_target}" != "none" ] && [ "${distribution_target}" != "PS" ] && [ "${distribution_target}" != "standard" ]; then
+            echo "distributionTarget must be one of: none, PS, standard" >&2
+            exit 1
+          fi
 
           jq -n \
             --arg hash "${apk_hash}" \
             --arg versionName "${version_name}" \
             --argjson versionCode "${version_code}" \
             --argjson isPlayStoreBack "${is_play_store_back}" \
-            '{Android: $hash, versionName: $versionName, versionCode: $versionCode, isPlayStoreBack: $isPlayStoreBack}' \
+            --arg showBackup "${show_backup}" \
+            --arg distributionTarget "${distribution_target}" \
+            '{Android: $hash, versionName: $versionName, versionCode: $versionCode, isPlayStoreBack: $isPlayStoreBack, showBackup: $showBackup, distributionTarget: $distributionTarget}' \
             > Android/AndroidHash.json.tmp
           mv Android/AndroidHash.json.tmp Android/AndroidHash.json
 

@@ -2,5 +2,7 @@
   "Android": "74f67f6c8544b5eb9ed984128861b95c36933c4541c3c64b96a91e62f261c8c2",
   "versionName": "1.3.13",
   "versionCode": 2026081503,
-  "isPlayStoreBack": false
+  "isPlayStoreBack": false,
+  "showBackup": "none",
+  "distributionTarget": "none"
 }
