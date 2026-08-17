@@ -3,17 +3,23 @@ name: Upload to Cloudflare R2
 on:
   push:
     paths:
+      # Launcher Files
       - 'launcher/Flarial.Launcher.exe'
-      - 'launcher/Flarial.Launcher.Installer.exe'
       - 'launcher/Flarial.Launcher.msix'
-      - 'launcher/NewSupported.txt'
+      - 'launcher/Flarial.Launcher.Installer.exe'
+
+      # Content Files
       - 'launcher/Supported.json'
       - 'launcher/Versions.json'
       - 'launcher/Promotions.json'
+      - 'launcher/gamelaunchhelper.dll'
+      
+      # Blacklist Files
       - 'blacklist_dll_names.txt'
       - 'blacklist_dll_hashes.txt'
-      - 'launcher/gamelaunchhelper.dll'
+      
       - '.github/workflows/r2-upload.yml'
+      
       # Android APK uploads are intentionally not triggered directly by
       # Android/Flarial.apk pushes. The Android hash workflow commits
       # AndroidHash.json immediately after the APK changes; uploading on the
@@ -76,23 +82,15 @@ jobs:
               --endpoint-url ${R2_ENDPOINT}
             echo "✓ Uploaded Flarial.Launcher.msix"
           fi
+
+          # Upload Game Launch Helper
           
-          # Upload Flarial Launcher version metadata.
-
-          if [ -f "launcher/launcherVersion.txt" ]; then
-            aws s3 cp launcher/launcherVersion.txt s3://${R2_BUCKET}/launcher/launcherVersion.txt \
+          if [ -f "launcher/gamelaunchhelper.dll" ]; then
+            aws s3 cp launcher/gamelaunchhelper.dll s3://${R2_BUCKET}/launcher/gamelaunchhelper.dll \
               --endpoint-url ${R2_ENDPOINT}
-            echo "✓ Uploaded launcherVersion.txt"
-          fi
-
-          # Upload Flarial Launcher executable.
+            echo "✓ Uploaded gamelaunchhelper.dll"
+          fi   
           
-          if [ -f "launcher/Flarial.Launcher.exe" ]; then
-            aws s3 cp launcher/Flarial.Launcher.exe s3://${R2_BUCKET}/launcher/Flarial.Launcher.exe \
-              --endpoint-url ${R2_ENDPOINT}
-            echo "✓ Uploaded Flarial.Launcher.exe"
-          fi
-
           # Upload DLL hashes metadata.
 
           if [ -f "dll_hashes.json" ]; then
@@ -117,14 +115,6 @@ jobs:
             echo "✓ Uploaded blacklist_dll_hashes.txt"
           fi
 
-          # Upload supported versions metadata.
-
-          if [ -f "launcher/NewSupported.txt" ]; then
-            aws s3 cp launcher/NewSupported.txt s3://${R2_BUCKET}/launcher/NewSupported.txt \
-              --endpoint-url ${R2_ENDPOINT}
-            echo "✓ Uploaded NewSupported.txt"
-          fi
-
           if [ -f "launcher/Supported.json" ]; then
             aws s3 cp launcher/Supported.json s3://${R2_BUCKET}/launcher/Supported.json \
               --endpoint-url ${R2_ENDPOINT}
@@ -142,19 +132,7 @@ jobs:
               --endpoint-url ${R2_ENDPOINT}
             echo "✓ Uploaded Promotions.json"
           fi          
-          
-          if [ -f "launcher/Flarial.Bootstrapper.exe" ]; then
-            aws s3 cp launcher/Flarial.Bootstrapper.exe s3://${R2_BUCKET}/launcher/Flarial.Bootstrapper.exe \
-              --endpoint-url ${R2_ENDPOINT}
-            echo "✓ Uploaded Flarial.Bootstrapper.exe"
-          fi
-
-          if [ -f "launcher/Flarial.Version.Changer.exe" ]; then
-            aws s3 cp launcher/Flarial.Version.Changer.exe s3://${R2_BUCKET}/launcher/Flarial.Version.Changer.exe \
-              --endpoint-url ${R2_ENDPOINT}
-            echo "✓ Uploaded Flarial.Version.Changer.exe"
-          fi
-          
+                    
           # Upload release build of the client.
 
           if [ -f "dll/latest.dll" ]; then
@@ -246,14 +224,6 @@ jobs:
             echo "✓ Uploaded android/AndroidHash.json"
             trap - EXIT
           fi
-
-          # Upload Game Launch Helper
-          
-          if [ -f "launcher/gamelaunchhelper.dll" ]; then
-            aws s3 cp launcher/gamelaunchhelper.dll s3://${R2_BUCKET}/launcher/gamelaunchhelper.dll \
-              --endpoint-url ${R2_ENDPOINT}
-            echo "✓ Uploaded gamelaunchhelper.dll"
-          fi   
 
       - name: Verify uploads
         env:
