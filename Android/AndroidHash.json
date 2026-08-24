@@ -2,7 +2,7 @@
   "Android": "b987dbc44e5d4181cd9512b39871d1bcd7dbe13dad31a3b2eb91e1418319c710",
   "versionName": "1.3.14",
   "versionCode": 2026081802,
-  "isPlayStoreBack": false,
+  "isPlayStoreBack": true,
   "showBackup": "toPS",
   "distributionTarget": "PS"
 }
