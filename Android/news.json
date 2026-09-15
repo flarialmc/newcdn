@@ -57,7 +57,7 @@
   },
   {
   "id": "news_26_50_unsupported",
-  "posted": 1789524439,
+  "posted": 1789483866,
   "title": "26.50 Unsupported",
   "author": "Flarial Team",
   "content": "Version 26.50 is currently unsupported by Flarial across both platforms. Please remain on or downgrade to version 26.45 while we work on an update.\n\n⚠️ Warning: Downgrading may delete your existing worlds and resource/behavior packs. Back them up before proceeding!\n\nNote: You must own Minecraft on Google Play and be signed in with that account for this method to work.\n\nHow to downgrade via Aurora Store:\n1. Open Aurora Store and search for Minecraft.\n2. Open the Minecraft details page and tap the three-dot menu (top-right).\n3. Select 'Manual Download'.\n4. Enter version code: 972604501\n5. Download and install to revert to 26.45.",
