@@ -53,6 +53,14 @@
     "title": "Heads up!",
     "author": "Raspberry",
     "content": "Minecraft Bedrock 26.50 is expected to release on September 15. Flarial may not support the update right away, and support could take several days.\n\nTo keep using Flarial on your current version, turn off auto-updates for Minecraft:\n\n1. Open the Google Play Store.\n2. Open the Minecraft page.\n3. Tap the three-dot menu in the top-right.\n4. Turn off \"Enable auto-update.\"\n\nWe'll let you know as soon as Flarial supports 26.50. Thanks for your patience, and for using Flarial.",
-    "important": true
+    "important": false
+  },
+  {
+  "id": "news_26_50_unsupported",
+  "posted": 1789524439,
+  "title": "26.50 Unsupported",
+  "author": "Flarial Team",
+  "content": "Version 26.50 is currently unsupported by Flarial across both platforms. Please remain on or downgrade to version 26.45 while we work on an update.\n\n⚠️ Warning: Downgrading may delete your existing worlds and resource/behavior packs. Back them up before proceeding!\n\nNote: You must own Minecraft on Google Play and be signed in with that account for this method to work.\n\nHow to downgrade via Aurora Store:\n1. Open Aurora Store and search for Minecraft.\n2. Open the Minecraft details page and tap the three-dot menu (top-right).\n3. Select 'Manual Download'.\n4. Enter version code: 972604501\n5. Download and install to revert to 26.45.",
+  "important": true
   }
 ]
