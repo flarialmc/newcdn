@@ -54,5 +54,13 @@
     "author": "Raspberry",
     "content": "Minecraft Bedrock 26.50 is expected to release on September 15. Flarial may not support the update right away, and support could take several days.\n\nTo keep using Flarial on your current version, turn off auto-updates for Minecraft:\n\n1. Open the Google Play Store.\n2. Open the Minecraft page.\n3. Tap the three-dot menu in the top-right.\n4. Turn off \"Enable auto-update.\"\n\nWe'll let you know as soon as Flarial supports 26.50. Thanks for your patience, and for using Flarial.",
     "important": false
+  },
+  {
+    "id": "265051-support-by-flarial-devs",
+    "posted": 1789634177,
+    "title": "26.50/51 Support by Flarial Devs",
+    "author": "Flarial Devs",
+    "content": "**Flarial has been updated to 26.50/51!**\n\nWe are working on fixing issues with Zoom and Auto Sprint. The fix will come as soon as possible.\n\nThank you for your patience!",
+    "important": true
   }
 ]
