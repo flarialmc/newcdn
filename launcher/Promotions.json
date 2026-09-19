@@ -2,5 +2,9 @@
     {
         "Image": "https://litebyte.co/images/flarial.png",
         "Uri": "https://litebyte.co/minecraft?utm_source=flarial-client&utm_medium=app&utm_campaign=bedrock-launch"
+    },
+    {
+        "Image": "https://res.cloudinary.com/skhhd6ho/image/upload/f_auto,q_auto/og-default",
+        "Uri": "https://salad.com/download?utm_source=flarial&utm_medium=channel-partner&utm_content=minecraft-client&utm_campaign=flarial-partnership-926"
     }
 ]
